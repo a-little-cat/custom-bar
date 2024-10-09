@@ -2,6 +2,21 @@
 
 All notable changes to the stats bar extension will be documented in this file.
 
+
+## [0.6.3] - 2024-10-21
+- Fix CPU bug
+
+## [0.6.2] - 2024-10-21
+- Update doc
+- Update default Settings
+- Remove uptime and loadavg
+- Merge CPU and Memory
+
+## [0.6.1] - 2024-10-11
+
+### Added
+- Add GPU(nvidia) support.
+
 ## [0.5.2] - 2022-08-07
 
 ### Fixed
