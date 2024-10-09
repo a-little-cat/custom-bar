@@ -9,13 +9,13 @@ import { extensionEmitter } from './eventEmitter';
 import { StatsModule, AllSysModules } from './sysinfo';
 import { ConfigurationKeys } from './types';
 
-const configPrefix = 'statsBar';
+const configPrefix = 'CustomBar';
 
 class Setting {
   cfg: WorkspaceConfiguration | null = null;
   allModules = AllSysModules;
   default = {
-    modules: ['cpuLoad', 'networkSpeed', 'memoUsage'] as StatsModule[],
+    modules: ['cpuLoad', 'networkSpeed', 'gpuLoad'] as StatsModule[],
     refreshInterval: 1800,
     priority: -1
   };

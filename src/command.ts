@@ -1,7 +1,6 @@
 import { ExtensionContext, commands, window, env, ConfigurationTarget } from 'vscode';
 import { Commands, ConfigurationKeys } from './types';
 import { setting } from './setting';
-import { getIP } from './sysinfo';
 
 class Command {
   init(context: ExtensionContext) {
@@ -17,26 +16,6 @@ class Command {
   }
 
   registerCommand() {
-    commands.registerCommand(
-      Commands.CopyIp,
-      async () => {
-        try {
-          const ip = await getIP();
-          if (ip) {
-            env.clipboard.writeText(ip);
-            window.showInformationMessage(`The IP ${ip} was copied successfully`);
-          } else {
-            window.showInformationMessage(`Not found IP`);
-          }
-        } catch (err) {
-          if (err instanceof Error) {
-            window.showErrorMessage(`IP get error: ${err.message}`);
-          }
-        }
-      },
-      this
-    );
-
     commands.registerCommand(
       Commands.EnableAll,
       () => {
@@ -70,22 +49,6 @@ class Command {
     );
 
     commands.registerCommand(
-      Commands.EnableLoadavg,
-      () => {
-        setting.enableModule('loadavg');
-      },
-      this
-    );
-
-    commands.registerCommand(
-      Commands.DisableLoadavg,
-      () => {
-        setting.disableModule('loadavg');
-      },
-      this
-    );
-
-    commands.registerCommand(
       Commands.EnableNetworkSpeed,
       () => {
         setting.enableModule('networkSpeed');
@@ -97,38 +60,6 @@ class Command {
       Commands.DisableNetworkSpeed,
       () => {
         setting.disableModule('networkSpeed');
-      },
-      this
-    );
-
-    commands.registerCommand(
-      Commands.EnableMemoUsage,
-      () => {
-        setting.enableModule('memoUsage');
-      },
-      this
-    );
-
-    commands.registerCommand(
-      Commands.DisableMemoUsage,
-      () => {
-        setting.disableModule('memoUsage');
-      },
-      this
-    );
-
-    commands.registerCommand(
-      Commands.EnableUptime,
-      () => {
-        setting.enableModule('uptime');
-      },
-      this
-    );
-
-    commands.registerCommand(
-      Commands.DisableUptime,
-      () => {
-        setting.disableModule('uptime');
       },
       this
     );
