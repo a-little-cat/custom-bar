@@ -2,7 +2,7 @@
   "name": "custom-bar",
   "displayName": "Custom bar",
   "description": "A Custom bar to show info",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "publisher": "a-little-cat",
   "engines": {
     "vscode": "^1.94.0"

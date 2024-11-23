@@ -25,13 +25,15 @@ export async function getCpuLoad() {
   try {
     const valueObject = {
       currentLoad: 'currentLoad',
-      mem: 'total,used'
+      mem: 'total,free,buffers,cached'
     }
     const data = await si.get(valueObject);
+    const mem = data.mem
+    const used = mem.total - mem.free - mem.buffers - mem.cached
     return {
       cpu_used: data.currentLoad.currentLoad,
       total: data.mem.total,
-      used: data.mem.used,
+      used: used,
     };
   } catch (err) { }
 }

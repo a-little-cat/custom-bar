@@ -2,8 +2,10 @@
 
 All notable changes to the stats bar extension will be documented in this file.
 
+## [0.6.4] - 2024-11-23
+- Update memory calce logic
 
-## [0.6.3] - 2024-10-21
+## [0.6.3] - 2024-11-23
 - Fix CPU bug
 
 ## [0.6.2] - 2024-10-21
@@ -15,7 +17,7 @@ All notable changes to the stats bar extension will be documented in this file.
 ## [0.6.1] - 2024-10-11
 
 ### Added
-- Add GPU(nvidia) support.
+- Add GPU(nvidia) support
 
 ## [0.5.2] - 2022-08-07
 
